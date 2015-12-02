@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>Profile Redirect</name>
+	<author>Charlie Lodder</author>
+	<creationDate>02/12/2015</creationDate>
+	<copyright>Copyright (C) 2015 Charlie Lodder. All Rights Reserved</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>lodder15@hotmail.co.uk</authorEmail>
+	<authorUrl>https://joomjunk.co.uk</authorUrl>
+	<version>1.0.0</version>
+	<description>A plugin that redirects the user after they edit their profile</description>
+	
+	<files>
+		<filename plugin="profileredirect">profileredirect.php</filename>
+	</files>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field 
+					name="url"
+					type="menuitem"
+					disable="separator,alias,heading,url"
+					label="Redirect Page"
+					>
+					<option
+						value="">JDEFAULT</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	
+</extension>

@@ -12,15 +12,10 @@ use Joomla\Registry\Registry;
 
 class PlgSystemProfileredirect extends JPlugin
 {
-
-	protected $autoloadLanguage = false;
-
-	
 	public function __construct(&$subject, $config)
 	{
 		parent::__construct($subject, $config);
 	}
-
 
 	public static function onUserAfterSave($user, $isNew, $success, $msg)
 	{
@@ -43,8 +38,11 @@ class PlgSystemProfileredirect extends JPlugin
 				$menu = $app->getMenu();
 				$item = $menu->getItem($redirect);
 				
-				// Redirect
-				$app->redirect(JRoute::_($item->link));
+				// Redirect if the store was successful
+				if ($success == true)
+				{
+					$app->redirect(JRoute::_($item->link));
+				}
 			}
 
 		}

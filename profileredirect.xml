@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 3 or later</license>
 	<authorEmail>lodder15@hotmail.co.uk</authorEmail>
 	<authorUrl>https://joomjunk.co.uk</authorUrl>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<description>A plugin that redirects the user after they edit their profile</description>
 	
 	<files>

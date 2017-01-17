@@ -41,7 +41,7 @@ class PlgSystemProfileredirect extends JPlugin
 				// Redirect if the store was successful
 				if ($success == true)
 				{
-					$app->redirect(JRoute::_($item->link));
+					$app->redirect($item->route);
 				}
 			}
 

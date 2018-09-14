@@ -19,16 +19,15 @@ class PlgSystemProfileredirect extends JPlugin
 
 	public static function onUserAfterSave($user, $isNew, $success, $msg)
 	{
-		$app   = JFactory::getApplication();
-		$input = $app->input;
-		
+		$app = JFactory::getApplication();
+
 		// Check is we're on the front-end and if we're editing an existing user
-		if ($app->isSite() && $isNew == false)
+		if ($app->isSite() && !$isNew)
 		{
-			$option = $input->get('option');
+			$option = $app->input->get('option');
 			
 			// If we're on the profile edit page
-			if ($option == 'com_users')
+			if ($option === 'com_users')
 			{
 				// Get the redirect parameter value
 				$params   = new Registry(JPluginHelper::getPlugin('system', 'profileredirect')->params);
@@ -39,7 +38,7 @@ class PlgSystemProfileredirect extends JPlugin
 				$item = $menu->getItem($redirect);
 				
 				// Redirect if the store was successful
-				if ($success == true)
+				if ($success)
 				{
 					$app->redirect($item->route);
 				}
